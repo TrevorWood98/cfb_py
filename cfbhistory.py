@@ -1,5 +1,6 @@
 import pymysql as ps
 
+
 def hist(usr_input, cmd, cn):
     if usr_input == 'history of oklahoma football':
         query = "SELECT * FROM history WHERE school = 'Oklahoma' ORDER BY year DESC;"
@@ -8,10 +9,10 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
-    
+
     elif usr_input == 'oklahoma football history':
         query = "SELECT * FROM history WHERE school = 'Oklahoma' ORDER BY year DESC;"
         cmd.execute(query)
@@ -19,7 +20,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -30,7 +31,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -41,10 +42,10 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
-    
+
     elif usr_input == 'history of ohio state':
         query = "SELECT * FROM history WHERE school = 'Ohio State' ORDER BY year DESC;"
         cmd.execute(query)
@@ -52,7 +53,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -63,12 +64,11 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
-    
-    #Michigan
+    # Michigan
     elif usr_input == 'history of michigan football':
         query = "SELECT * FROM history WHERE school = 'Michigan' ORDER BY year DESC;"
         cmd.execute(query)
@@ -76,7 +76,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -87,7 +87,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -98,11 +98,11 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
-    #Alabama
+    # Alabama
     elif usr_input == 'history of alabama football':
         query = "SELECT * FROM history WHERE school = 'Alabama' ORDER BY year DESC;"
         cmd.execute(query)
@@ -110,7 +110,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -121,10 +121,10 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
-    
+
     elif usr_input == 'history of alabama':
         query = "SELECT * FROM history WHERE school = 'Alabama' ORDER BY year DESC;"
         cmd.execute(query)
@@ -132,11 +132,11 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
-    #georgia
+    # georgia
     elif usr_input == 'georgia football history':
         query = "SELECT * FROM history WHERE school = 'Georgia' ORDER BY year DESC;"
         cmd.execute(query)
@@ -144,7 +144,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -155,7 +155,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -166,11 +166,11 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
-    #TCU
+    # TCU
     elif usr_input == 'tcu football history':
         query = "SELECT * FROM history WHERE school = 'TCU' ORDER BY year DESC;"
         cmd.execute(query)
@@ -178,7 +178,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -189,7 +189,7 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
 
@@ -200,6 +200,6 @@ def hist(usr_input, cmd, cn):
         print('\nOkay, this is what I found: ')
         for row in rows:
             for col in row:
-                print(col, end = ' ')
+                print(col, end=' ')
             print()
         cn.close()
