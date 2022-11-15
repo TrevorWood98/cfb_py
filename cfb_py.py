@@ -1,5 +1,5 @@
 import pymysql as ps
-import tenwin
+import tenwin, whocoaches
 import sys
 import maskpass as mp
 
@@ -16,143 +16,14 @@ while True:
         cn = ps.connect(host = 'localhost', port = 3306, user = 'root', password = pwd, db='cfb_statrec')
         cmd = cn.cursor()
         
+        #Ten wins since 2010 questions
         tenwin.tenwin(usr_input, cmd, cn)
 
+        #Who coaches what teams
+        whocoaches.whowhere(usr_input, cmd, cn)
 
-   
-        if  usr_input.split() == ['who', 'coaches', 'oklahoma']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Oklahoma';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'michigan']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Michigan';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'ohio', 'state']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Ohio State';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
         
-        elif usr_input.split() == ['who', 'coaches', 'alabama']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Alabama';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'tcu']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'TCU';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'georgia']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'TCU';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'oklahoma?']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Oklahoma';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'michigan?']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Michigan';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'ohio', 'state?']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Ohio State';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-        
-        elif usr_input.split() == ['who', 'coaches', 'alabama?']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'Alabama';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'tcu?']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'TCU';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input.split() == ['who', 'coaches', 'georgia?']:
-            query = f"SELECT * FROM whocoacheswho WHERE school = 'TCU';"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-        
-        elif usr_input == 'done':
+        if usr_input == 'done':
             sys.exit()
 
     except Exception as e:
