@@ -1,4 +1,5 @@
 import pymysql as ps
+import tenwin
 import sys
 import maskpass as mp
 
@@ -14,69 +15,12 @@ while True:
     try:
         cn = ps.connect(host = 'localhost', port = 3306, user = 'root', password = pwd, db='cfb_statrec')
         cmd = cn.cursor()
-
-
-
-        """10 win seasons since 2010"""
-        if usr_input == 'who has 10 win seasons since 2010?':
-            query = "SELECT school, TenWin FROM tenwinseason_post2010;"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print()
-            cn.close()
         
-        elif usr_input == 'who has 10 win seasons since 2010?':
-            query = "SELECT school, TenWin FROM tenwinseason_post2010;"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print()
-            cn.close()
-        
-        elif usr_input == 'who has 10 win seasons since 2010':
-            query = "SELECT school, TenWin FROM tenwinseason_post2010;;"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-        
-        elif usr_input == '10 win seasons since 2010?':
-            query = "SELECT school, TenWin FROM tenwinseason_post2010;"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found: ')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-
-        elif usr_input == '10 win seasons since 2010':
-            query = "SELECT school, TenWin FROM tenwinseason_post2010;"
-            cmd.execute(query)
-            rows = cmd.fetchall()
-            print('\nOkay, this is what I found:')
-            for row in rows:
-                for col in row:
-                    print(col, end = ' ')
-                print('\n')
-            cn.close()
-        
+        tenwin.tenwin(usr_input, cmd, cn)
 
 
-        # Who coaches what team
-        elif usr_input.split() == ['who', 'coaches', 'oklahoma']:
+   
+        if  usr_input.split() == ['who', 'coaches', 'oklahoma']:
             query = f"SELECT * FROM whocoacheswho WHERE school = 'Oklahoma';"
             cmd.execute(query)
             rows = cmd.fetchall()
