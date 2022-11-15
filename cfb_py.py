@@ -1,5 +1,5 @@
 import pymysql as ps
-import tenwin, whocoaches
+import tenwin, whocoaches, cfbhistory
 import sys
 import maskpass as mp
 
@@ -22,6 +22,8 @@ while True:
         #Who coaches what teams
         whocoaches.whowhere(usr_input, cmd, cn)
 
+        #History of teams
+        cfbhistory.hist(usr_input, cmd, cn)
         
         if usr_input == 'done':
             sys.exit()
