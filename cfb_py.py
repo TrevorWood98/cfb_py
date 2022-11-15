@@ -5,7 +5,6 @@ import maskpass as mp
 print('Enter database password before we begin: \n')
 pwd = mp.askpass(mask = "")
 
-schools = ['oklahoma', 'michigan', 'ohio state', 'alabama', 'tcu', 'georgia']
 
 while True:
     print('********************************************************************')
